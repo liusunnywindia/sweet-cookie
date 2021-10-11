@@ -1,0 +1,76 @@
+.camera {
+    perspective: 400px;
+    perspective-origin:50% 50%;
+  }
+  .space {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+  }
+  .space img {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+  }
+  .space .front {
+    /* 正面的图无需旋转 */
+    transform: rotateZ(0) rotateY(0) rotateZ(0) translateZ(-400px);
+  }
+  .space .back {
+    transform: rotateY(180deg) translateZ(-400px);
+  }
+  .space .left {
+    transform: rotateY(90deg) translateZ(-400px);
+  }
+  .space .right {
+    transform: rotateY(-90deg) translateZ(-400px);
+  }
+  .space .bottom {
+    transform: rotateX(90deg) translateZ(-400px);
+  }
+  .space .top {
+    transform: rotateX(-90deg) translateZ(-400px);
+  }
+
+  @keyframes rot {
+    0% {
+      transform: rotateY(0deg)
+    }
+
+    10% {
+      transform: rotateY(90deg)
+    }
+
+    25% {
+      transform: rotateY(90deg)
+    }
+
+    35% {
+      transform: rotateY(180deg)
+    }
+
+    50% {
+      transform: rotateY(180deg)
+    }
+
+    60% {
+      transform: rotateY(270deg)
+    }
+
+    75% {
+      transform: rotateY(270deg)
+    }
+
+    85% {
+      transform: rotateY(360deg)
+    }
+
+    100% {
+      transform: rotateY(360deg)
+    }
+  }
+  /*为立方体加上帧动画*/
+  /* .space {
+    animation: rot 2s ease-out 0s infinite forwards;
+  } */
